@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 # Fech NVIDIA GPU device (if one exists)
 if [ "${NVIDIA_VISIBLE_DEVICES:-}" = "all" ]; then
@@ -76,7 +77,7 @@ function install_nvidia_driver {
                 --no-libglx-indirect \
                 --no-install-libglvnd \
                 > "${USER_HOME:?}/Downloads/nvidia_gpu_install.log" 2>&1
-        else 
+        else
             print_step_header "Installing Legacy NVIDIA driver v${nvidia_host_driver_version:?} to match what is running on the host"
             chmod +x "${USER_HOME:?}/Downloads/NVIDIA_${nvidia_host_driver_version:?}.run"
             "${USER_HOME:?}/Downloads/NVIDIA_${nvidia_host_driver_version:?}.run" \

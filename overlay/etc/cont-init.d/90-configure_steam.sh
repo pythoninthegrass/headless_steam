@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 print_header "Configure Steam"
 
